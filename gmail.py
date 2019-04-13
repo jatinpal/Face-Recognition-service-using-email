@@ -8,6 +8,7 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase 
 from email import encoders 
 
+downld_path = '/media/jatin/Work/Work/FaceRecognition/attachments'
 fetched_imgs = {}
 
 def getImages(user, pwd):
@@ -46,11 +47,11 @@ def getImages(user, pwd):
                     continue
                 
                 fileName = part.get_filename()
-                fetched_imgs[source].append(os.path.join('/media/jatin/Work/Work/FaceRecognition/attachments', fileName))
+                fetched_imgs[source].append(os.path.join(downld_path, fileName))
                 print(fileName)
                 
                 if bool(fileName):
-                    filePath = os.path.join('/media/jatin/Work/Work/FaceRecognition/attachments', fileName)
+                    filePath = os.path.join(downld_path, fileName)
                     if not os.path.isfile(filePath) :
                         fp = open(filePath, 'wb')
                         fp.write(part.get_payload(decode=True))
