@@ -9,8 +9,6 @@ import PIL.Image
 import numpy as np
 import gmail
 
-user = "facereco1.0@gmail.com"
-pwd = "Facereco123."
 known_people_folder = "/media/jatin/Work/Work/FaceRecognition/db"
 
 def scan_known_people(known_people_folder):
